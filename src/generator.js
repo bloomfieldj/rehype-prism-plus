@@ -278,15 +278,16 @@ const rehypePrismGenerator = (refractor) => {
         
         // To highlight or not to highlight
         
-        
+        if (shouldHighlightLine){
         // Line highlight
         if (shouldHighlightLine(i)) {
           // @ts-ignore
           line.properties.className.push('highlight-line')
         } else {
-          // Line fade
-          // @ts-ignore
+        // Line fade
+        // @ts-ignore
           line.properties.className.push('fade-line')
+        }
         }
 
         if (lang === 'diff' && toString(line).substring(0, 1) === '-') {
